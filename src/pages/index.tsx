@@ -1,5 +1,6 @@
 import { GetStaticProps } from 'next';
 import { format, parseISO } from 'date-fns';
+import ptBR from 'date-fns/locale/pt-BR'
 import { api } from '../services/api';
 
 type Episode = {
