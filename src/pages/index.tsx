@@ -5,6 +5,7 @@ type Episode = {
   id: string;
   title: string;
   members: string;
+  published_at: string;
 }
 
 type HomeProps = {
@@ -27,6 +28,16 @@ export const getStaticProps: GetStaticProps = async () => {
       _sort: 'published_at',
       _order: 'desc'
     }
+  })
+
+  const episodes = data.map(episode => {
+    return { 
+      id: episode.id,
+      title: episode.title,
+      thumbnail: episode.thumbnail,
+      members: episode.members,
+      published_at: episode.published_at,
+    };
   })
 
   return {
