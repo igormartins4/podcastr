@@ -38,7 +38,7 @@ export const getStaticProps: GetStaticProps = async () => {
       title: episode.title,
       thumbnail: episode.thumbnail,
       members: episode.members,
-      published_at: episode.published_at,
+      published_at: format(parseISO(episode.published_at), 'd MMM yy', { locale: ptBR }),
     };
   })
 
